@@ -1,11 +1,12 @@
 import { Box, Heading } from '@chakra-ui/layout'
-import { SpaceProps, BorderProps } from '@chakra-ui/system'
+import { SpaceProps, BorderProps, LayoutProps } from '@chakra-ui/system'
 import { ReactNode } from 'react'
 
 interface SectionProps {
   children: ReactNode
   title?: string
   p?: SpaceProps['p']
+  minW?: LayoutProps['minW']
   border?: BorderProps['border']
   borderColor?: BorderProps['borderColor']
   borderRadius?: BorderProps['borderRadius']

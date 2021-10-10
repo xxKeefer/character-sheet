@@ -94,14 +94,16 @@ export interface EquipmentDetails {
 export type EquipmentType = 'Boon' | 'Feat' | 'Gear' | 'Scar'
 
 export interface Consequences {
-  minor: ConsequencesQty
-  moderate: ConsequencesQty
-  major: ConsequencesQty
-  sever: ConsequencesQty
-  drastic: ConsequencesQty
+  minor: ConsequenceType
+  moderate: ConsequenceType
+  major: ConsequenceType
+  severe: ConsequenceType
+  drastic: ConsequenceType
 }
 
-export interface ConsequencesQty {
+export interface ConsequenceType {
   maximum: number
-  sustained: number
+  current: number
 }
+
+export type ConsequenceEntry = [keyof Consequences, ConsequenceType]
