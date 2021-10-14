@@ -1,4 +1,4 @@
-import { Center, Stack } from '@chakra-ui/layout'
+import { Stack } from '@chakra-ui/layout'
 import { DamageSlider } from '../../atoms'
 import { Section } from '../../components'
 import { Consequences, ConsequenceEntry } from '../../interfaces'
@@ -16,7 +16,7 @@ export const ConsequencesBlock = () => {
     return (Object.entries(block) as ConsequenceEntry[])
       .filter(([_, data]) => data.maximum > 0)
       .map(([type, data]) => {
-        return <DamageSlider name={type} data={data} />
+        return <DamageSlider key={type} name={type} data={data} />
       })
   }
 

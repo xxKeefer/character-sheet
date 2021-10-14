@@ -51,8 +51,8 @@ export interface KnowledgeSkills {
   knowledge: SpecificSkill
   lore: Skill
   medicine: Skill
+  protocol: Skill
   scholarship: Skill
-  survival: Skill
 }
 
 export interface PhysicalSkills {
@@ -88,6 +88,7 @@ export interface EquipmentDetails {
   name: string
   effect?: string
   description?: string
+  buildPoints: number | 0
   type: EquipmentType
 }
 

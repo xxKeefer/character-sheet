@@ -1,5 +1,5 @@
 import { Slider, SliderTrack, SliderFilledTrack, SliderThumb, IconButton } from '@chakra-ui/react'
-import { Center, Heading, Text, HStack, VStack, Divider } from '@chakra-ui/layout'
+import { Center, Heading, Text, HStack, Divider } from '@chakra-ui/layout'
 import { ConsequenceType } from '../../interfaces'
 import { useState } from 'react'
 import { FaHeartbeat as Up } from 'react-icons/fa'

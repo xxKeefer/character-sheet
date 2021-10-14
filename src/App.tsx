@@ -24,8 +24,8 @@ function App() {
     knowledge: { ...noSkill, domain: 'X' },
     lore: { ...noSkill },
     medicine: { ...noSkill },
+    protocol: { ...noSkill },
     scholarship: { ...noSkill },
-    survival: { ...noSkill },
   }
 
   const physical: PhysicalSkills = {

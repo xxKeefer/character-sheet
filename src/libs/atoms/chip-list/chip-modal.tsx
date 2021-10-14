@@ -13,9 +13,11 @@ import {
   Tag,
   TagLabel,
   TagLeftIcon,
+  Stack,
 } from '@chakra-ui/react'
 import { EquipmentDetails } from '../../interfaces'
 import { MdDeleteForever } from 'react-icons/md'
+import { GiSevenPointedStar as BuildPoints } from 'react-icons/gi'
 import { Icon } from '../../utils'
 
 export interface ChipModalProps {
@@ -28,7 +30,7 @@ export const ChipModal = (props: ChipModalProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-      <Button size="xs" rightIcon={Icon(item.type)} borderRadius="full" variant="solid" colorScheme="gray" onClick={onOpen}>
+      <Button size="sm" rightIcon={Icon(item.type)} borderRadius="full" variant="solid" colorScheme="gray" onClick={onOpen}>
         {item.name}
       </Button>
 
@@ -36,16 +38,26 @@ export const ChipModal = (props: ChipModalProps) => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <Text mr="2">
-              {item.name}
-              <Tag ml="2" mt="1" size="sm" variant="solid" colorScheme="gray">
-                <TagLeftIcon as={() => Icon(item.type)} />
-                <TagLabel ml="2">{item.type}</TagLabel>
-              </Tag>
-            </Text>
+            <Stack direction="column" spacing={1}>
+              <Text>{item.name}</Text>
+              <Stack direction="row" spacing={1}>
+                <Tag size="sm" variant="solid" colorScheme="gray">
+                  <TagLeftIcon as={() => Icon(item.type)} />
+                  <TagLabel ml="7px">{item.type}</TagLabel>
+                </Tag>
+                {item.buildPoints > 0 && (
+                  <Tag size="sm" variant="solid" colorScheme="gray">
+                    <TagLeftIcon as={BuildPoints} />
+                    <TagLabel>{`${item.buildPoints} BP`}</TagLabel>
+                  </Tag>
+                )}
+              </Stack>
+            </Stack>
           </ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{item.description}</ModalBody>
+          <ModalBody>
+            <Text>{item.description}</Text>
+          </ModalBody>
 
           <ModalFooter>
             <IconButton mr="auto" colorScheme="red" aria-label="Delete Item" size="sm" icon={<MdDeleteForever />} onClick={() => removeFn(item)} />

@@ -5,6 +5,7 @@ import { useBreakpointValue } from '@chakra-ui/media-query'
 import { useState, useEffect } from 'react'
 import { GiAlliedStar, GiRoundStar, GiPlainCircle } from 'react-icons/gi'
 import { Skill, SpecificSkill } from '../../interfaces/character'
+import { flatLeft, flatRight, trimZeroes } from '../../utils'
 import EditableLabel from './editable-label'
 
 export interface SkillLineProps {
@@ -16,6 +17,8 @@ export interface SkillLineProps {
 export const SkillLine = (props: SkillLineProps) => {
   const { data, skill, update } = props
 
+  const compact = useBreakpointValue({ md: true, sm: false, xs: false })
+
   const [total, setTotal] = useState(data.rank + data.modifier)
   const [mod, setMod] = useState(data.modifier)
   const [rank, setRank] = useState(data.rank)
@@ -26,13 +29,10 @@ export const SkillLine = (props: SkillLineProps) => {
   }
 
   useEffect(() => {
-    setTotal(mod + rank)
-  }, [mod, rank])
+    const newTotal = mod + rank
 
-  // borderRadius
-  const flatRight = '10% 0% 0% 10% / 10% 0% 0% 10%'
-  const flatLeft = '0% 10% 10% 0% / 0% 10% 10% 0% '
-  const compact = useBreakpointValue({ md: true, sm: false, xs: false })
+    setTotal(isNaN(newTotal) ? 0 : newTotal)
+  }, [mod, rank])
 
   return (
     <FormControl mt="2">
@@ -93,7 +93,7 @@ export const SkillLine = (props: SkillLineProps) => {
             borderRight="none"
             textAlign="center"
             type="number"
-            value={rank}
+            value={trimZeroes(rank)}
             min={0}
             onChange={(e) => updateTotal(e, setRank)}
             onFocus={(e) => e.target.select()}
@@ -116,7 +116,7 @@ export const SkillLine = (props: SkillLineProps) => {
             p="0 8px"
             textAlign="center"
             type="number"
-            value={mod}
+            value={trimZeroes(mod)}
             min={0}
             onChange={(e) => updateTotal(e, setMod)}
             onFocus={(e) => e.target.select()}
