@@ -1,4 +1,4 @@
-export * from './name-block/name-block'
+export * from './core-block/core-block'
 export * from './aspect-block/aspect-block'
 export * from './equipment-block/equipment-block'
 export * from './skill-block/skill-block'

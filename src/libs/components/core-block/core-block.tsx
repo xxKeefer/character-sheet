@@ -2,7 +2,7 @@ import { HStack, Wrap, WrapItem } from '@chakra-ui/layout'
 import { Select } from '@chakra-ui/select'
 import { TextInput, OmenButton } from '../../atoms'
 
-export const NameBlock = () => {
+export const CoreBlock = () => {
   return (
     <Wrap>
       <WrapItem flexGrow={1}>
@@ -10,6 +10,15 @@ export const NameBlock = () => {
       </WrapItem>
       <WrapItem flexGrow={1}>
         <TextInput label="Star" placeholder="Your Star Sign" update={() => undefined} />
+      </WrapItem>
+      <WrapItem flexGrow={1}>
+        <TextInput label="Bp Total" placeholder="0" update={() => undefined} />
+      </WrapItem>
+      <WrapItem flexGrow={1}>
+        <TextInput label="BP Bank" placeholder="0" update={() => undefined} />
+      </WrapItem>
+      <WrapItem flexGrow={1}>
+        <TextInput label="Power" placeholder="Power Level" update={() => undefined} />
       </WrapItem>
       <WrapItem flexGrow={1}>
         <Select placeholder="Omen Layout">
@@ -26,4 +35,4 @@ export const NameBlock = () => {
   )
 }
 
-export default NameBlock
+export default CoreBlock

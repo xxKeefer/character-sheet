@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/layout'
 import { useBreakpointValue } from '@chakra-ui/media-query'
-import { AspectBlock, NameBlock, EquipmentBlock, SkillBlock, Section, ConsequencesBlock } from './libs/components'
+import { AspectBlock, CoreBlock, EquipmentBlock, SkillBlock, Section, ConsequencesBlock } from './libs/components'
 import { ExpertiseSkills, KnowledgeSkills, PhysicalSkills, SocialSkills, Skill } from './libs/interfaces'
 
 function App() {
@@ -51,7 +51,9 @@ function App() {
   return (
     <Box minW="410px" m={mobile ? '0' : '10'} border="3px solid" borderColor="gray.200" borderRadius="12" className="App">
       <Box m="2">
-        <NameBlock />
+        <Section title="Core">
+          <CoreBlock />
+        </Section>
       </Box>
       <Box m="2">
         <Section title="Aspects">
