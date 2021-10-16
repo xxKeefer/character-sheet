@@ -5,7 +5,7 @@ import { useBreakpointValue } from '@chakra-ui/media-query'
 import { useState, useEffect } from 'react'
 import { GiAlliedStar, GiRoundStar, GiPlainCircle } from 'react-icons/gi'
 
-import { Skill, SpecificSkill } from '../../interfaces/character'
+import { Skill, SpecificSkill } from '../../interfaces'
 import { flatLeft, flatRight, trimZeroes } from '../../utils'
 import EditableLabel from './editable-label'
 

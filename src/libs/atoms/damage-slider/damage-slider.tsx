@@ -2,8 +2,8 @@ import { Slider, SliderTrack, SliderFilledTrack, SliderThumb, IconButton } from 
 import { Center, Heading, Text, HStack, Divider } from '@chakra-ui/layout'
 import { ConsequenceType } from '../../interfaces'
 import { useState } from 'react'
-import { FaHeartbeat as Up } from 'react-icons/fa'
-import { GiHeartMinus as Left, GiHeartPlus as Right, GiDeathSkull as Down } from 'react-icons/gi'
+import { FaHeartbeat as Right } from 'react-icons/fa'
+import { GiHeartMinus as Down, GiHeartPlus as Up, GiDeathSkull as Left } from 'react-icons/gi'
 
 export interface DamageSliderProps {
   name: string

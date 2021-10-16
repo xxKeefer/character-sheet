@@ -1,7 +1,7 @@
 import { SkillLine } from '../../atoms'
 import { Section } from '../layout/section'
 import { SimpleGrid, useBreakpointValue } from '@chakra-ui/react'
-import { SkillsBlockProps, SkillsBlock, SkillEntry } from '../../interfaces/character'
+import { SkillsBlockProps, SkillsBlock, SkillEntry } from '../../interfaces'
 
 export const SkillBlock = (props: SkillsBlockProps) => {
   const { expertise, knowledge, physical, social } = props
