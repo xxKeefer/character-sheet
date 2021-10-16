@@ -4,6 +4,7 @@ import { Flex } from '@chakra-ui/layout'
 import { useBreakpointValue } from '@chakra-ui/media-query'
 import { useState, useEffect } from 'react'
 import { GiAlliedStar, GiRoundStar, GiPlainCircle } from 'react-icons/gi'
+
 import { Skill, SpecificSkill } from '../../interfaces/character'
 import { flatLeft, flatRight, trimZeroes } from '../../utils'
 import EditableLabel from './editable-label'
@@ -34,18 +35,15 @@ export const SkillLine = (props: SkillLineProps) => {
     setTotal(isNaN(newTotal) ? 0 : newTotal)
   }, [mod, rank])
 
+  useEffect(() => {
+    console.log({ domain, _b: typeof domain === 'string' })
+  }, [domain])
+
   return (
     <FormControl mt="2">
       {!compact && (
         <FormLabel mb="1" ml="1">
-          {domain ? (
-            <Flex as="span">
-              <Text mr="2">{skill}</Text>
-              (<EditableLabel domain={domain || 'X'} update={setDomain} />)
-            </Flex>
-          ) : (
-            <Text>{skill}</Text>
-          )}
+          {domain || domain === '' ? <EditableLabel skill={skill} domain={domain} update={setDomain} compact={compact} /> : <Text>{skill}</Text>}
         </FormLabel>
       )}
       <Flex spacing={0} minW={'268px'} w="full">
@@ -54,11 +52,8 @@ export const SkillLine = (props: SkillLineProps) => {
             children={
               compact ? (
                 <>
-                  {domain ? (
-                    <Flex as="span">
-                      <Text mr="2">{skill}</Text>
-                      (<EditableLabel domain={domain || 'X'} update={setDomain} />)
-                    </Flex>
+                  {domain || domain === '' ? (
+                    <EditableLabel skill={skill} domain={domain} update={setDomain} compact={compact} />
                   ) : (
                     <Text>{skill}</Text>
                   )}

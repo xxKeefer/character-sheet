@@ -52,9 +52,8 @@ const ChipForm = (props: ChipFormProps) => {
         equipRef.current?.focus()
       }}
     >
-      {({ errors, values, handleSubmit }) => (
+      {({ errors, handleSubmit }) => (
         <Form>
-          {console.log(values.name === '')}
           <Stack direction={!!column ? 'column' : 'row'} mb="2">
             <FormControl isInvalid={!!errors.name}>
               <FormLabel htmlFor="name" />
