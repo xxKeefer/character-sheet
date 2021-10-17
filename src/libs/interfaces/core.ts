@@ -1,16 +1,21 @@
+import { PointsData } from './common'
 export interface CoreStats {
-  powerLevel: any
-  buildPoints: any
-  skillPoints: any
-  omen: any
-  titles: any
+  powerLevel: number
+  buildPoints: PointsData
+  skillPoints: PointsData
+  omen: Omen
+  name: string
+}
+export interface Omen {
+  starSign: string
+  description: string
+  omens: OmenLayout
 }
 
-interface OmenCount {
-  dark: number
+interface OmenLayout {
+  state: OmenState
   light: number
+  dark: number
 }
 
-interface OmenCoin {
-  string: 'Coin'
-}
+type OmenState = 'Blessed' | 'Cursed' | 'Neutral'

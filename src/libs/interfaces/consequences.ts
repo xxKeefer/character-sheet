@@ -1,3 +1,5 @@
+import { PointsData } from './common'
+
 export interface Consequences {
   minor: ConsequenceType
   moderate: ConsequenceType
@@ -12,4 +14,7 @@ export interface ConsequenceType {
 }
 
 export type ConsequenceEntry = [keyof Consequences, ConsequenceType]
-export type ConsequenceStats = Consequences
+export interface ConsequenceStats {
+  boxes: PointsData
+  damageTracks: Consequences
+}
