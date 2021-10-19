@@ -1,4 +1,4 @@
-import { Character, Skill, ExpertiseSkills, KnowledgeSkills, PhysicalSkills, SocialSkills } from '../../interfaces'
+import { Character, Skill, ExpertiseSkills, KnowledgeSkills, PhysicalSkills, SocialSkills, CharacterActions, CharacterSheet } from '../../interfaces'
 
 const noSkill: Skill = {
   total: 0,
@@ -102,4 +102,17 @@ export const newCharacter: Character = {
   equipment: [],
   skills: { expertise, knowledge, physical, social },
 }
-export default newCharacter
+
+export const newCharacterActions: CharacterActions = {
+  setCore: () => undefined,
+  setAspects: () => undefined,
+  setConsequences: () => undefined,
+  setEquipment: () => undefined,
+  setSkills: () => undefined,
+}
+
+export const newCharacterSheet: CharacterSheet = {
+  values: newCharacter,
+  actions: newCharacterActions,
+}
+export default newCharacterSheet

@@ -1,33 +1,34 @@
 import React, { useContext, useState } from 'react'
-import newCharacter from './character-initial'
-import { Character } from '../../interfaces'
+import newCharacterSheet, { newCharacter } from './character-initial'
+import { CharacterSheet, Character } from '../../interfaces'
 
-const CharacterContext = React.createContext<Character>(newCharacter)
+const CharacterContext = React.createContext<CharacterSheet>(newCharacterSheet)
 
-export const useAuth = () => {
+export const useCharacter = () => {
   return useContext(CharacterContext)
 }
 
-export const CoreProvider = ({ children }: any) => {
+export const CharacterProvider: React.FC = ({ children }) => {
   // some state and functions here
 
   /** CORE **/
-  // Core state
+  const [core, setCore] = useState<Character['core']>(newCharacter.core)
 
   /** ASPECTS **/
-  // state
+  const [aspects, setAspects] = useState<Character['aspects']>(newCharacter.aspects)
 
   /** CONSEQUENCES **/
-  //  state
+  const [consequences, setConsequences] = useState<Character['consequences']>(newCharacter.consequences)
 
   /** EQUIPMENT **/
-  //  state
+  const [equipment, setEquipment] = useState<Character['equipment']>(newCharacter.equipment)
 
   /** SKILLS **/
-  //  state
+  const [skills, setSkills] = useState<Character['skills']>(newCharacter.skills)
 
-  const characterSheet: any = {
-    // the values/methods exported by the context
+  const characterSheet = {
+    values: { core, aspects, consequences, equipment, skills },
+    actions: { setCore, setAspects, setConsequences, setEquipment, setSkills },
   }
   return <CharacterContext.Provider value={characterSheet}>{children}</CharacterContext.Provider>
 }

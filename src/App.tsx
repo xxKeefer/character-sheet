@@ -1,52 +1,13 @@
 import { Box } from '@chakra-ui/layout'
 import { useBreakpointValue } from '@chakra-ui/media-query'
 import { AspectBlock, CoreBlock, EquipmentBlock, SkillBlock, Section, ConsequencesBlock } from './libs/components'
-import { ExpertiseSkills, KnowledgeSkills, PhysicalSkills, SocialSkills, Skill } from './libs/interfaces'
+import { useCharacter } from './libs/contexts'
 
 function App() {
-  const noSkill: Skill = {
-    total: 0,
-    rank: 0,
-    modifier: 0,
-  }
-
-  const expertise: ExpertiseSkills = {
-    alertness: { ...noSkill },
-    burglary: { ...noSkill },
-    investigation: { ...noSkill },
-    pilot: { ...noSkill, domain: 'X' },
-    shoot: { ...noSkill },
-    sneak: { ...noSkill },
-  }
-
-  const knowledge: KnowledgeSkills = {
-    craft: { ...noSkill, domain: 'X' },
-    knowledge: { ...noSkill, domain: 'X' },
-    lore: { ...noSkill },
-    medicine: { ...noSkill },
-    protocol: { ...noSkill },
-    scholarship: { ...noSkill },
-  }
-
-  const physical: PhysicalSkills = {
-    acrobatics: { ...noSkill },
-    athletics: { ...noSkill },
-    conviction: { ...noSkill },
-    endurance: { ...noSkill },
-    might: { ...noSkill },
-    strike: { ...noSkill },
-  }
-
-  const social: SocialSkills = {
-    deception: { ...noSkill },
-    gossip: { ...noSkill },
-    intimidation: { ...noSkill },
-    presence: { ...noSkill },
-    rapport: { ...noSkill },
-    networking: { ...noSkill },
-  }
-
   const mobile = useBreakpointValue({ xs: 10, base: 0 })
+  const {
+    values: { skills },
+  } = useCharacter()
 
   return (
     <Box minW="410px" m={mobile ? '0' : '10'} border="3px solid" borderColor="gray.200" borderRadius="12" className="App">
@@ -71,7 +32,7 @@ function App() {
         </Section>
       </Box>
       <Box m="2">
-        <SkillBlock expertise={expertise} knowledge={knowledge} physical={physical} social={social} />
+        <SkillBlock expertise={skills.expertise} knowledge={skills.knowledge} physical={skills.physical} social={skills.social} />
       </Box>
     </Box>
   )

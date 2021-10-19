@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { ChakraProvider } from '@chakra-ui/react'
+import { CharacterProvider } from './libs/contexts'
 import { Helmet } from 'react-helmet'
 import theme from './libs/theme/theme'
 
@@ -16,7 +17,9 @@ ReactDOM.render(
       />
     </Helmet>
     <ChakraProvider theme={theme}>
-      <App />
+      <CharacterProvider>
+        <App />
+      </CharacterProvider>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root'),
