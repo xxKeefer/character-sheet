@@ -35,10 +35,6 @@ export const SkillLine = (props: SkillLineProps) => {
     setTotal(isNaN(newTotal) ? 0 : newTotal)
   }, [mod, rank])
 
-  useEffect(() => {
-    console.log({ domain, _b: typeof domain === 'string' })
-  }, [domain])
-
   return (
     <FormControl mt="2">
       {!compact && (
