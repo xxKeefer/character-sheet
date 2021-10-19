@@ -1,0 +1,101 @@
+[
+  {
+    "starSign": "The Agnostic",
+    "description": "The standard array. five omens. three dark, two light.",
+    "omens": {
+      "state": "Neutral",
+      "light": 2,
+      "dark": 3
+    }
+  },
+  {
+    "starSign": "The Gambler",
+    "description": "This character starts the game with a coin instead of Omens. When holding the coin, this character is blessed. When the DM holds the coin, this character is cursed. When the character flips, if they pass the flip, they succeed the roll and passes the DM the coin. If they fail, they pass the coin to the DM and may not burn advantages on this action. When the DM flips the coin, they follow the same rules with the addition it must target this character. When the coin is refreshed, whoever holds the coin creates an advantage. ",
+    "omens": {
+      "state": "Blessed",
+      "light": 1,
+      "dark": 0
+    }
+  },
+  {
+    "starSign": "The Seven",
+    "description": "The 7 may only be flipped to invoke a particular action. The 7 start with 4 flipped Light, and 3 flipped Dark. The Father - Discover, The Mother - Adapt, The Maiden - Explore, The Crone - Help, The Warrior - Overcome, The Smith - Amend, The Stranger - Boon.",
+    "omens": {
+      "state": "Neutral",
+      "light": 4,
+      "dark": 3
+    }
+  },
+  {
+    "starSign": "The One Eyed Almighty",
+    "description": "5 tokens: 3 Dark, 2 Light. A character may only flip omens if committing an action that is considered to be Lawful, Merciful, Honorable or Dutiful. The DM may deny a flip if it is deemed not to be in service of Righteousness. You may adjust the tenants according to the setting. ",
+    "omens": {
+      "state": "Neutral",
+      "light": 2,
+      "dark": 3
+    }
+  },
+  {
+    "starSign": "The Monkey’s Paw ",
+    "description": "3 omens. The monkey's paw does not grant Blessed or Cursed. The character may use 3 omens per day that are considered an automatic success (within reason). But if they use an omen token, something terrible occurs. ",
+    "omens": {
+      "state": "Neutral",
+      "light": 3,
+      "dark": 0
+    }
+  },
+  {
+    "starSign": "The Good Twin",
+    "description": "3 omens. 3 Light. At the start of the day, the player nominates someone as their Evil twin. The Evil twin has access to the Good Twins Omen tokens as well as their own. If either player becomes Cursed, both players do.",
+    "omens": {
+      "state": "Blessed",
+      "light": 3,
+      "dark": 0
+    }
+  },
+  {
+    "starSign": "The Story-Teller",
+    "description": "During character creation, when creating aspects, flip a light/dark token to decide whether they are positive or negative. Each Aspect is assigned Dark or Light depending on if it is positive or negative. Regardless of all other factors, start each game with the story told layout.",
+    "omens": {
+      "state": "Neutral",
+      "light": 2,
+      "dark": 3
+    }
+  },
+  {
+    "starSign": "The Gemini",
+    "description": "The player may only flip tokens to do an action that is considered “Pragmatic.” The DM may only flip tokens to do an action that is considered “Empathetic”. If either flips a token to do the other, they become Blessed/Cursed. ",
+    "omens": {
+      "state": "Neutral",
+      "light": 3,
+      "dark": 2
+    }
+  },
+  {
+    "starSign": "The Cryptic Swan",
+    "description": "When blessed, humans and computers see Janus. When cursed, humans and computers see The Cryptic Swan. When neither, computers perceive the Cryptic Swan and humans perceive Janus. When Janus flips a token, these are momentarily reversed with \"a distinct style.\".",
+    "omens": {
+      "state": "Neutral",
+      "light": 3,
+      "dark": 2
+    }
+  },
+  {
+    "starSign": "The Man in the Mirror",
+    "description": "When the DM flips a token, create an ally advantage. When The Player flips a token, it creates an enemy advantage.",
+    "omens": {
+      "state": "Neutral",
+      "light": 3,
+      "dark": 2
+    }
+  },
+  {
+    "starSign": "The Endless Machine",
+    "description": "A player may instead of flipping a token, take a Moderate or higher consequence of damage.",
+    "omens": {
+      "state": "Neutral",
+      "light": 3,
+      "dark": 2
+    }
+  }
+]
